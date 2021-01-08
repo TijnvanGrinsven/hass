@@ -1,0 +1,43 @@
+---
+- alias: "Toggle lamp from dimmer"
+  initial_state: on
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: office_remote
+      event: 1002
+  action:
+    service: switch.toggle
+    entity_id: switch.office_lights
+
+- alias: "Increase brightness of lamp from dimmer"
+  initial_state: on
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: office_remote
+      event: 2002
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.lamp
+        brightness: >
+          {% set bri = state_attr('light.lamp', 'brightness') | int %}
+          {{ [bri+30, 249] | min }}
+- alias: "Decrease brightness of lamp from dimmer"
+  initial_state: on
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: office_remote
+      event: 3002
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: lamp
+        brightness: >
+          {% set bri = state_attr('light.lamp', 'brightness') | int %}
+          {{ [bri-30, 0] | max }}

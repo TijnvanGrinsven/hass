@@ -1,0 +1,111 @@
+---
+- platform: template
+  switches:
+    office_lights:
+      value_template: "{{ states.light.office_ceiling.state == 'on'
+        or states.light.office_ceiling_2.state == 'on' }}"
+      turn_on:
+        service: hue.hue_activate_scene
+        data:
+          group_name: "Office"
+          scene_name: "Build.mode"
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id:
+            - light.office_ceiling_2
+            - light.office_ceiling
+    hall_lights:
+      value_template: "{{ states.light.hall_ceiling_1.state == 'on'
+        or states.light.hall_ceiling_2.state == 'on' }}"
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id:
+            - light.hall_ceiling_1
+            - light.hall_ceiling_2
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id:
+            - light.hall_ceiling_1
+            - light.hall_ceiling_2
+    #floors
+    downstairs_lights:
+      value_template: "{{ states.light.office_ceiling.state == 'on'
+        or states.light.office_ceiling_2.state == 'on'
+        or states.light.storage_ceiling.state == 'on' }}"
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id:
+            - light.office_ceiling
+            - light.office_ceiling_2
+            - light.storage_ceiling
+            - light.hall_ceiling_1
+            - light.hall_ceiling_2
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id:
+            - light.office_ceiling
+            - light.office_ceiling_2
+            - light.storage_ceiling
+            - light.hall_ceiling_1
+            - light.hall_ceiling_2
+    firstfloor_lights:
+      value_template: "{{ states.light.diner_ceiling.state == 'on'
+        or states.light.livingroom_ceiling.state == 'on'
+        or states.light.kitchen_ceiling_1.state == 'on'
+        or states.light.kitchen_ceiling_2.state == 'on'
+        }}"
+      turn_on:
+        - service: light.turn_on
+          data:
+            entity_id:
+              - light.diner_ceiling
+              - light.sauroman_tower
+              - light.livingroom_ceiling
+              - light.tv_light_corner
+              - light.stove_left
+              - light.stove_right
+              - light.kitchen_ceiling_1
+              - light.kitchen_ceiling_2
+        - service: switch.turn_on
+          data:
+            entity_id:
+              - switch.shellyplug_s_ab97dd
+      turn_off:
+        - service: light.turn_off
+          data:
+            entity_id:
+              - light.diner_ceiling
+              - light.sauroman_tower
+              - light.livingroom_ceiling
+              - light.tv_light_corner
+              - light.stove_left
+              - light.stove_right
+              - light.kitchen_ceiling_1
+              - light.kitchen_ceiling_2
+        - service: switch.turn_off
+          data:
+            entity_id:
+              - switch.shellyplug_s_ab97dd
+    # secondfloor_lights:
+    #   value_template: "{{ states.light.office_ceiling.state == 'on'
+    #     or states.light.office_ceiling_2.state == 'on'
+    #     or states.light.storage_ceiling.state == 'on' }}"
+    #   turn_on:
+    #     service: light.turn_on
+    #     data:
+    #       entity_id:
+    #         - light.office_ceiling
+    #         - light.office_ceiling_2
+    #         - light.storage_ceiling
+    #   turn_off:
+    #     service: light.turn_off
+    #     data:
+    #       entity_id:
+    #         - light.office_ceiling
+    #         - light.office_ceiling_2
+    #         - light.storage_ceiling

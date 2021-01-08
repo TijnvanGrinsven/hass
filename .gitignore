@@ -1,0 +1,12 @@
+secrets.yaml
+.storage/
+!.storage/lovelace
+tts/
+www/img/
+automations.yaml
+blueprints/
+image/
+scenes.yaml
+*.log
+*.db
+.HA_VERSION

@@ -1,0 +1,133 @@
+{
+    "version": 1,
+    "key": "lovelace",
+    "data": {
+        "config": {
+            "title": "Casa Eltinos",
+            "views": [
+                {
+                    "path": "default_view",
+                    "title": "Home",
+                    "badges": [
+                        {
+                            "entity": "person.eltinos"
+                        },
+                        {
+                            "entity": "person.yaar"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "type": "picture-glance",
+                            "title": "Livingroom",
+                            "image": "/local/img/woonkamer.jpg",
+                            "entities": [
+                                "sensor.motion_sensor",
+                                "sensor.kitchen_switch_battery_level"
+                            ]
+                        },
+                        {
+                            "type": "picture-glance",
+                            "title": "Bedroom",
+                            "image": "/local/img/bedroom.jpg",
+                            "entities": [
+                                "sensor.ground_floor_toilet_light_level",
+                                "sensor.ground_floor_toilet_temperature"
+                            ]
+                        },
+                        {
+                            "type": "picture-glance",
+                            "title": "Office",
+                            "image": "/local/img/office_2.jpg",
+                            "entities": [
+                                {
+                                    "entity": "switch.office_lights"
+                                },
+                                {
+                                    "entity": "binary_sensor.motion_sensor"
+                                },
+                                {
+                                    "entity": "light.storage_ceiling"
+                                }
+                            ],
+                            "entity": "group.office_lights"
+                        },
+                        {
+                            "type": "picture-glance",
+                            "title": "Bathroom",
+                            "image": "/local/img/bathroom.jpg",
+                            "entities": [
+                                "binary_sensor.ground_floor_toilet_motion",
+                                "binary_sensor.bathroom_motion"
+                            ]
+                        },
+                        {
+                            "type": "picture-glance",
+                            "title": "Kitchen",
+                            "image": "/local/img/keuken.jpg",
+                            "entities": [
+                                "sensor.local_ip",
+                                "sensor.motion_sensor_battery_level"
+                            ]
+                        },
+                        {
+                            "type": "picture-glance",
+                            "title": "Misc",
+                            "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                            "entities": [
+                                "sensor.bathroom_light_level",
+                                "sensor.bathroom_temperature"
+                            ]
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.downstairs_lights"
+                                },
+                                {
+                                    "entity": "switch.firstfloor_lights"
+                                }
+                            ],
+                            "title": "Verlichting"
+                        }
+                    ]
+                },
+                {
+                    "title": "Media",
+                    "path": "mediaplayer",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.the_void"
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.bedroom_display"
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.g_mini"
+                        }
+                    ]
+                },
+                {
+                    "title": "Dev",
+                    "path": "dev",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "group.office_lights"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
