@@ -22,9 +22,14 @@
                             "title": "Livingroom",
                             "image": "/local/img/woonkamer.jpg",
                             "entities": [
-                                "sensor.motion_sensor",
-                                "sensor.kitchen_switch_battery_level"
-                            ]
+                                {
+                                    "entity": "switch.livingroom_lights"
+                                }
+                            ],
+                            "hold_action": {
+                                "action": "toggle"
+                            },
+                            "entity": "switch.livingroom_lights"
                         },
                         {
                             "type": "picture-glance",
@@ -66,8 +71,15 @@
                             "title": "Kitchen",
                             "image": "/local/img/keuken.jpg",
                             "entities": [
-                                "sensor.local_ip",
-                                "sensor.motion_sensor_battery_level"
+                                {
+                                    "entity": "switch.kitchen_lights"
+                                },
+                                {
+                                    "entity": "switch.stove_lights"
+                                },
+                                {
+                                    "entity": "sensor.kitchen_switch_battery_level"
+                                }
                             ]
                         },
                         {

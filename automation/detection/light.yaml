@@ -1,0 +1,43 @@
+- alias: Turn on storage when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor
+    to: "on"
+  action:
+    service: light.turn_on
+    entity_id: light.storage_ceiling
+
+- alias: Turn off storage light 5 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor
+    to: "off"
+    for:
+      minutes: 5
+  action:
+    service: light.turn_off
+    entity_id: light.storage_ceiling
+
+- alias: Turn on bathroom when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bathroom_motion
+    to: "on"
+  action:
+    service: light.turn_on
+    entity_id:
+      - light.bathroom_sink
+      - light.bathroom_ceiling
+
+- alias: Turn off bathroom light 10 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor
+    to: "off"
+    for:
+      minutes: 10
+  action:
+    service: light.turn_off
+    entity_id:
+      - light.bathroom_sink
+      - light.bathroom_ceiling

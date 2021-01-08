@@ -1,6 +1,29 @@
 ---
 - platform: template
   switches:
+    ##Downstairs
+    downstairs_lights:
+      value_template: "{{ states.light.office_ceiling.state == 'on'
+        or states.light.office_ceiling_2.state == 'on'
+        or states.light.storage_ceiling.state == 'on' }}"
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id:
+            - light.office_ceiling
+            - light.office_ceiling_2
+            - light.storage_ceiling
+            - light.hall_ceiling_1
+            - light.hall_ceiling_2
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id:
+            - light.office_ceiling
+            - light.office_ceiling_2
+            - light.storage_ceiling
+            - light.hall_ceiling_1
+            - light.hall_ceiling_2
     office_lights:
       value_template: "{{ states.light.office_ceiling.state == 'on'
         or states.light.office_ceiling_2.state == 'on' }}"
@@ -30,29 +53,8 @@
           entity_id:
             - light.hall_ceiling_1
             - light.hall_ceiling_2
-    #floors
-    downstairs_lights:
-      value_template: "{{ states.light.office_ceiling.state == 'on'
-        or states.light.office_ceiling_2.state == 'on'
-        or states.light.storage_ceiling.state == 'on' }}"
-      turn_on:
-        service: light.turn_on
-        data:
-          entity_id:
-            - light.office_ceiling
-            - light.office_ceiling_2
-            - light.storage_ceiling
-            - light.hall_ceiling_1
-            - light.hall_ceiling_2
-      turn_off:
-        service: light.turn_off
-        data:
-          entity_id:
-            - light.office_ceiling
-            - light.office_ceiling_2
-            - light.storage_ceiling
-            - light.hall_ceiling_1
-            - light.hall_ceiling_2
+
+    ##Firstfloor
     firstfloor_lights:
       value_template: "{{ states.light.diner_ceiling.state == 'on'
         or states.light.livingroom_ceiling.state == 'on'
@@ -91,21 +93,82 @@
           data:
             entity_id:
               - switch.shellyplug_s_ab97dd
-    # secondfloor_lights:
-    #   value_template: "{{ states.light.office_ceiling.state == 'on'
-    #     or states.light.office_ceiling_2.state == 'on'
-    #     or states.light.storage_ceiling.state == 'on' }}"
-    #   turn_on:
-    #     service: light.turn_on
-    #     data:
-    #       entity_id:
-    #         - light.office_ceiling
-    #         - light.office_ceiling_2
-    #         - light.storage_ceiling
-    #   turn_off:
-    #     service: light.turn_off
-    #     data:
-    #       entity_id:
-    #         - light.office_ceiling
-    #         - light.office_ceiling_2
-    #         - light.storage_ceiling
+    #Livingroom
+    livingroom_lights:
+      value_template: "{{ states.light.livingroom_ceiling.state == 'on'
+        or states.light.diner_ceiling.state == 'on' }}"
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id:
+            - light.livingroom_ceiling
+            - light.diner_ceiling
+            - light.sauroman_tower
+            - light.tv_light_corner
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id:
+            - light.livingroom_ceiling
+            - light.diner_ceiling
+            - light.sauroman_tower
+            - light.tv_light_corner
+    #Kitchen
+    kitchen_lights:
+      value_template: "{{ states.light.kitchen_ceiling_1.state == 'on'
+        or states.light.stove_left.state == 'on' }}"
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id:
+            - light.kitchen_ceiling_1
+            - light.kitchen_ceiling_2
+            - light.stove_left
+            - light.stove_right
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id:
+            - light.kitchen_ceiling_1
+            - light.kitchen_ceiling_2
+            - light.stove_left
+            - light.stove_right
+    #Stove
+    stove_lights:
+      value_template: "{{ states.light.stove_left.state == 'on'
+        or states.light.stove_right.state == 'on' }}"
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id:
+            - light.stove_left
+            - light.stove_right
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id:
+            - light.stove_left
+            - light.stove_right
+    ##Second floor
+    secondfloor_lights:
+      value_template: "{{ states.light.bedroom_right.state == 'on'
+        or states.light.bathroom_sink.state == 'on'
+        or states.light.passage_ceiling.state == 'on' }}"
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id:
+            - light.bedroom_right
+            - light.passage_ceiling
+            - light.bathroom_ceiling
+            - light.bathroom_sink
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id:
+            - light.bedroom_right
+            - light.passage_ceiling
+            - light.bathroom_ceiling
+            - light.bathroom_sink
+#Bedroom
+#Bathroom

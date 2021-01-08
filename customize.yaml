@@ -3,31 +3,45 @@
 sensor.motion_sensor:
   friendly_name: Aquara sensor 1 - Lux
 
-  #Binarysensor
+#Binarysensor
 binary_sensor.motion_sensor:
   friendly_name: Aquara sensor 1 - Motion
   icon: mdi:motion-sensor
 
-  #Vacuum
+#Vacuum
 vacuum.xiaomi_vacuum_cleaner:
   friendly_name: Zwabbertje
   icon: mdi:robot-vacuum
 
-# Lights
+#Lights
 light.storage_ceiling:
   friendly_name: Washok
 
 #Switches-light groups
-switch.office_lights:
-  friendly_name: Kantoor verlichting
-  icon: mdi:lightbulb-group
-switch.hall_lights:
-  friendly_name: Hall verlichting
-  icon: mdi:lightbulb-group
-
+##Downstairs
 switch.downstairs_lights:
   friendly_name: Beganegrond verlichting
   icon: mdi:lightbulb-group
+switch.office_lights:
+  friendly_name: Kantoor verlichting
+  icon: mdi:lightbulb-multiple
+switch.hall_lights:
+  friendly_name: Hall verlichting
+  icon: mdi:lightbulb-multiple
+##Firstfloor
 switch.firstfloor_lights:
   friendly_name: 1ste verdieping verlichting
+  icon: mdi:lightbulb-group
+switch.livingroom_lights:
+  friendly_name: Woonkamer verlichting
+  icon: mdi:sofa-single
+switch.kitchen_lights:
+  friendly_name: Keuken verlichting
+  icon: mdi:ceiling-light
+switch.stove_lights:
+  friendly_name: Afzuigkap
+  icon: mdi:stove
+##Secondfloor
+switch.secondfloor_lights:
+  friendly_name: 2de verdieping verlichting
   icon: mdi:lightbulb-group
