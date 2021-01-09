@@ -1,9 +1,9 @@
 ---
 homeassistant:
   name: Eindhoven
-  latitude: 51.479751
-  longitude: 5.503628
-  elevation: 0
+  latitude: 51.421360
+  longitude: 5.501370
+  elevation: 10
   unit_system: metric
   time_zone: Europe/Amsterdam
   customize: !include customize.yaml
@@ -12,9 +12,9 @@ homeassistant:
 logger:
   #default: info
   logs:
-    homeassistant.components.webhook: debug
-    homeassistant.components.config: debug
-    homeassistant.components.config.automation: debug
+    # homeassistant.components.webhook: debug
+    # homeassistant.components.config: debug
+    # homeassistant.components.config.automation: debug
     homeassistant.components.vacuum.xiaomi_miio: debug
 
 #cloud:
@@ -23,16 +23,14 @@ conversation:
 history:
 logbook:
 map:
+mobile_app:
 
 light: !include devices/light.yaml
 weather: !include devices/weather.yaml
 sensor: !include devices/sensor.yaml
 switch: !include devices/switch.yaml
-
-vacuum:
-  - platform: xiaomi_miio
-    host: 192.168.2.192
-    token: !secret vacuum_token
+camera: !include devices/camera.yaml
+vacuum: !include devices/vacuum.yaml
 
 group: !include groups.yaml
 automation: !include_dir_merge_list automation/

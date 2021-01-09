@@ -23,10 +23,10 @@
     - service: light.turn_on
       data:
         entity_id:
-          - light.office_ceiling
+          - light.office_ceiling_1
           - light.office_ceiling_2
         brightness: >
-          {% set bri = state_attr('light.office_ceiling', 'brightness') | int %}
+          {% set bri = state_attr('light.office_ceiling_1', 'brightness') | int %}
           {{ [bri+30, 249] | min }}
 - alias: "Decrease brightness of lamp from dimmer"
   initial_state: on
@@ -40,8 +40,8 @@
     - service: light.turn_on
       data:
         entity_id:
-          - light.office_ceiling
+          - light.office_ceiling_1
           - light.office_ceiling_2
         brightness: >
-          {% set bri = state_attr('light.office_ceiling', 'brightness') | int %}
+          {% set bri = state_attr('light.office_ceiling_1', 'brightness') | int %}
           {{ [bri-30, 0] | max }}

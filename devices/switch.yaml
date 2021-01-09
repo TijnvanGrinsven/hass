@@ -3,14 +3,14 @@
   switches:
     ##Downstairs
     downstairs_lights:
-      value_template: "{{ states.light.office_ceiling.state == 'on'
+      value_template: "{{ states.light.office_ceiling_1.state == 'on'
         or states.light.office_ceiling_2.state == 'on'
         or states.light.storage_ceiling.state == 'on' }}"
       turn_on:
         service: light.turn_on
         data:
           entity_id:
-            - light.office_ceiling
+            - light.office_ceiling_1
             - light.office_ceiling_2
             - light.storage_ceiling
             - light.hall_ceiling_1
@@ -19,13 +19,13 @@
         service: light.turn_off
         data:
           entity_id:
-            - light.office_ceiling
+            - light.office_ceiling_1
             - light.office_ceiling_2
             - light.storage_ceiling
             - light.hall_ceiling_1
             - light.hall_ceiling_2
     office_lights:
-      value_template: "{{ states.light.office_ceiling.state == 'on'
+      value_template: "{{ states.light.office_ceiling_1.state == 'on'
         or states.light.office_ceiling_2.state == 'on' }}"
       turn_on:
         service: hue.hue_activate_scene
@@ -37,7 +37,7 @@
         data:
           entity_id:
             - light.office_ceiling_2
-            - light.office_ceiling
+            - light.office_ceiling_1
     hall_lights:
       value_template: "{{ states.light.hall_ceiling_1.state == 'on'
         or states.light.hall_ceiling_2.state == 'on' }}"

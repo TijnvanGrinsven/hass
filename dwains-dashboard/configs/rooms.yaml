@@ -12,15 +12,19 @@ rooms:
     icon: mdi:stove
     light: group.kitchen_lights
     mediaplayer: media_player.sonos_living_room
-  - name: Entrance
-    icon: mdi:key
-    light: group.hall_lights
-    temperature: sensor.ground_floor_toilet_temperature
-    motion: binary_sensor.ground_floor_toilet_motion
   - name: Kantoor
     icon: mdi:desk-lamp
     light: group.office_lights
     media_player: media_player.g_mini
+  - name: Hal
+    icon: mdi:key
+    light: group.hall_lights
+    temperature: sensor.ground_floor_toilet_temperature
+  - name: Toilet
+    icon: mdi:toilet
+    light: light.toilet_ceiling
+    temperature: sensor.ground_floor_toilet_temperature
+    motion: binary_sensor.ground_floor_toilet_motion
   - name: Berging
     icon: mdi:washing-machine
     light: group.storage_lights

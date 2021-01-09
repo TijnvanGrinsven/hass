@@ -5,18 +5,78 @@ sensor.motion_sensor:
 
 #Binarysensor
 binary_sensor.motion_sensor:
-  friendly_name: Aquara sensor 1 - Motion
+  friendly_name: Storage motion sensor
+  icon: mdi:motion-sensor
+binary_sensor.bathroom_motion:
+  friendly_name: Badkamer motion sensor
+  icon: mdi:motion-sensor
+binary_sensor.ground_floor_toilet_motion:
+  friendly_name: Toilet motion sensor
   icon: mdi:motion-sensor
 
 #Vacuum
-vacuum.xiaomi_vacuum_cleaner:
-  friendly_name: Zwabbertje
-  icon: mdi:robot-vacuum
+# vacuum.xiaomi_vacuum_cleaner:
+#   friendly_name: Zwabbertje
+#   icon: mdi:robot-vacuum
 
 #Lights
 light.storage_ceiling:
-  friendly_name: Washok
-
+  friendly_name: Storage plafond
+  icon: mdi:ceiling-light
+light.bathroom_ceiling:
+  friendly_name: Badkamer plafond
+  icon: mdi:ceiling-light
+light.bathroom_sink:
+  friendly_name: Badkamer wasbak
+light.bedroom_ceiling:
+  friendly_name: Slaapkamer plafond
+  icon: mdi:ceiling-light
+light.hall_ceiling_1:
+  friendly_name: Hall plafond 1
+  icon: mdi:ceiling-light
+light.hall_ceiling_2:
+  friendly_name: Hall plafond 2
+  icon: mdi:ceiling-light
+light.kitchen_ceiling_1:
+  friendly_name: Keuken plafond 1
+  icon: mdi:ceiling-light
+light.kitchen_ceiling_2:
+  friendly_name: Keuken plafond 2
+  icon: mdi:ceiling-light
+light.kitchen_stove_left:
+  friendly_name: Fornuis links
+light.kitchen_stove_right:
+  friendly_name: Fornuis rechts
+light.livingroom_ceiling:
+  friendly_name: Woonkamer plafond
+  icon: mdi:ceiling-light
+light.livingroom_diner:
+  friendly_name: Woonkamer trap
+  icon: mdi:ceiling-light
+light.livingroom_sauroman:
+  friendly_name: Woonkamer Sauroman
+  icon: mdi:lava-lamp
+light.livingroom_tvspot:
+  friendly_name: Woonkamer TVspot
+  icon: mdi:television-ambient-light
+light.livingroom_grondlamp_tv:
+  friendly_name: Woonkamer kerstboom
+  icon: mdi:pine-tree
+light.livingroom_grondlamp_tv_2:
+  friendly_name: Woonkamer Yari lamp
+  icon: mdi:floor-lamp
+light.office_ceiling_1:
+  friendly_name: Kantoor plafond 1
+  icon: mdi:ceiling-light
+light.office_ceiling_2:
+  friendly_name: Kantoor plafond 2
+  icon: mdi:ceiling-light
+light.passage_ceiling:
+  friendly_name: Overloop plafond
+  icon: mdi:ceiling-light
+light.Toilet_ceiling:
+  friendly_name: Toilet plafond
+  icon: mdi:ceiling-light
 #Switch
 switch.livingroom_shelly_plug:
   friendly_name: Tv lamp rechts

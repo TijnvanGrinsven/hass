@@ -5,6 +5,10 @@ house_information:
     - entity: sensor.local_ip
       icon_on: mdi:ip-network
       icon_off: mdi:ip-network-outline
+    - entity: sensor.storage_washmachine_energy
+    - entity: sensor.storage_washmachine_power
+      icon_on: mdi:washing-machine
+      icon_off: mdi:washing-machine-off
   #   - entity: binary_sensor.hallway_door_contact
   #     icon_on: mdi:door-open
   #     icon_off: mdi:door-closed

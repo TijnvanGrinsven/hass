@@ -3,7 +3,7 @@ office_lights:
   icon: mdi:lightbulb-on
   entities:
     - light.office_ceiling_2
-    - light.office_ceiling
+    - light.office_ceiling_1
 hall_lights:
   name: Hal verlichting
   icon: mdi:lightbulb-on
@@ -24,6 +24,7 @@ livingroom_lights:
     - light.livingroom_sauroman
     - light.livingroom_tvspot
     - light.livingroom_grondlamp_tv
+    - light.livingroom_grondlamp_tv_2
 kitchen_lights:
   name: Hal verlichting
   icon: mdi:lightbulb-on

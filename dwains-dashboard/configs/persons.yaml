@@ -3,6 +3,10 @@
 persons:
   - name: Eltinos
     track: person.eltinos
+    more_entities:
+      columns: 1
+      entities:
+        - entity: sensor.pocophone_f1_battery_level
   - name: Yaar
     track: person.yaar
 #     more_entities:
