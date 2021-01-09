@@ -21,12 +21,12 @@ logger:
 config:
 conversation:
 history:
-
 logbook:
 map:
 
-#light: !include devices/light.yaml
-#sensor: !include devices/sensor.yaml
+light: !include devices/light.yaml
+weather: !include devices/weather.yaml
+sensor: !include devices/sensor.yaml
 switch: !include devices/switch.yaml
 
 vacuum:

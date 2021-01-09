@@ -1,6 +1,50 @@
 office_lights:
-  name: Lichten
+  name: kantoor verlichting
   icon: mdi:lightbulb-on
   entities:
     - light.office_ceiling_2
     - light.office_ceiling
+hall_lights:
+  name: Hal verlichting
+  icon: mdi:lightbulb-on
+  entities:
+    - light.hall_ceiling_1
+    - light.hall_ceiling_2
+storage_lights:
+  name: Hal verlichting
+  icon: mdi:lightbulb-on
+  entities:
+    - light.storage_ceiling
+livingroom_lights:
+  name: Hal verlichting
+  icon: mdi:lightbulb-on
+  entities:
+    - light.livingroom_ceiling
+    - light.livingroom_diner
+    - light.livingroom_sauroman
+    - light.livingroom_tvspot
+    - light.livingroom_grondlamp_tv
+kitchen_lights:
+  name: Hal verlichting
+  icon: mdi:lightbulb-on
+  entities:
+    - light.kitchen_ceiling_1
+    - light.kitchen_ceiling_2
+    - light.stove_left
+    - light.stove_right
+bedroom_lights:
+  name: Hal verlichting
+  icon: mdi:lightbulb-on
+  entities:
+    - light.bedroom_ceiling
+bathroom_lights:
+  name: Badkamer verlichting
+  icon: mdi:lightbulb-on
+  entities:
+    - light.bathroom_ceiling
+    - light.bathroom_sink
+passage_lights:
+  name: Overloop verlichting
+  icon: mdi:lightbulb-on
+  entities:
+    - light.passage_ceiling

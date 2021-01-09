@@ -17,7 +17,10 @@ vacuum.xiaomi_vacuum_cleaner:
 light.storage_ceiling:
   friendly_name: Washok
 
-#Switches-light groups
+#Switch
+switch.livingroom_shelly_plug:
+  friendly_name: Tv lamp rechts
+  icon: mdi:floor-lamp
 ##Downstairs
 switch.downstairs_lights:
   friendly_name: Beganegrond verlichting

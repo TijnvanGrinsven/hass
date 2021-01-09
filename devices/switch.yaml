@@ -56,7 +56,7 @@
 
     ##Firstfloor
     firstfloor_lights:
-      value_template: "{{ states.light.diner_ceiling.state == 'on'
+      value_template: "{{ states.light.livingroom_diner.state == 'on'
         or states.light.livingroom_ceiling.state == 'on'
         or states.light.kitchen_ceiling_1.state == 'on'
         or states.light.kitchen_ceiling_2.state == 'on'
@@ -65,10 +65,10 @@
         - service: light.turn_on
           data:
             entity_id:
-              - light.diner_ceiling
-              - light.sauroman_tower
+              - light.livingroom_diner
+              - light.livingroom_sauroman
               - light.livingroom_ceiling
-              - light.tv_light_corner
+              - light.livingroom_tvspot
               - light.stove_left
               - light.stove_right
               - light.kitchen_ceiling_1
@@ -81,10 +81,10 @@
         - service: light.turn_off
           data:
             entity_id:
-              - light.diner_ceiling
-              - light.sauroman_tower
+              - light.livingroom_diner
+              - light.livingroom_sauroman
               - light.livingroom_ceiling
-              - light.tv_light_corner
+              - light.livingroom_tvspot
               - light.stove_left
               - light.stove_right
               - light.kitchen_ceiling_1
@@ -96,23 +96,23 @@
     #Livingroom
     livingroom_lights:
       value_template: "{{ states.light.livingroom_ceiling.state == 'on'
-        or states.light.diner_ceiling.state == 'on' }}"
+        or states.light.livingroom_diner.state == 'on' }}"
       turn_on:
         service: light.turn_on
         data:
           entity_id:
             - light.livingroom_ceiling
-            - light.diner_ceiling
-            - light.sauroman_tower
-            - light.tv_light_corner
+            - light.livingroom_diner
+            - light.livingroom_sauroman
+            - light.livingroom_tvspot
       turn_off:
         service: light.turn_off
         data:
           entity_id:
             - light.livingroom_ceiling
-            - light.diner_ceiling
-            - light.sauroman_tower
-            - light.tv_light_corner
+            - light.livingroom_diner
+            - light.livingroom_sauroman
+            - light.livingroom_tvspot
     #Kitchen
     kitchen_lights:
       value_template: "{{ states.light.kitchen_ceiling_1.state == 'on'
@@ -151,14 +151,14 @@
             - light.stove_right
     ##Second floor
     secondfloor_lights:
-      value_template: "{{ states.light.bedroom_right.state == 'on'
+      value_template: "{{ states.light.bedroom_ceiling.state == 'on'
         or states.light.bathroom_sink.state == 'on'
         or states.light.passage_ceiling.state == 'on' }}"
       turn_on:
         service: light.turn_on
         data:
           entity_id:
-            - light.bedroom_right
+            - light.bedroom_ceiling
             - light.passage_ceiling
             - light.bathroom_ceiling
             - light.bathroom_sink
@@ -166,7 +166,7 @@
         service: light.turn_off
         data:
           entity_id:
-            - light.bedroom_right
+            - light.bedroom_ceiling
             - light.passage_ceiling
             - light.bathroom_ceiling
             - light.bathroom_sink

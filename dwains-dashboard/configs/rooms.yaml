@@ -1,0 +1,43 @@
+# https://dwainscheeren.github.io/dwains-lovelace-dashboard/configuration/rooms.html
+
+rooms:
+  - name: Woonkamer
+    icon: mdi:sofa
+    light: group.livingroom_lights
+    media_player: media_player.the_void
+  #     vacuum:
+  #       entity: vacuum.rockrobo
+  #       camera: camera.rockrobo_map
+  - name: Keuken
+    icon: mdi:stove
+    light: group.kitchen_lights
+    mediaplayer: media_player.sonos_living_room
+  - name: Entrance
+    icon: mdi:key
+    light: group.hall_lights
+    temperature: sensor.ground_floor_toilet_temperature
+    motion: binary_sensor.ground_floor_toilet_motion
+  - name: Kantoor
+    icon: mdi:desk-lamp
+    light: group.office_lights
+    media_player: media_player.g_mini
+  - name: Berging
+    icon: mdi:washing-machine
+    light: group.storage_lights
+    motion: binary_sensor.motion_sensor
+  - name: Overloop
+    icon: mdi:lightbulb-multiple
+    light: group.passage_lights
+  - name: Badkamer
+    icon: mdi:scale-bathroom
+    light: group.bathroom_lights
+    temperature: sensor.bathroom_temperature
+    motion: binary_sensor.bathroom_motion
+  - name: Slaapkamer
+    icon: mdi:bed-double
+    light: group.bedroom_lights
+    media_player: media_player.bedroom_display
+  - name: Kledingkamer
+    icon: mdi:hanger
+  - name: Logeerkamer
+    icon: mdi:bed
