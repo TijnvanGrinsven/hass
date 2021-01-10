@@ -1,0 +1,8 @@
+---
+waste_moved:
+  name: Waste has been moved
+  initial: off
+  icon: mdi:delete-empty
+waste_reminder:
+  name: Waste reminder enabled
+  initial: on
