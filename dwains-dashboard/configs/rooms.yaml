@@ -4,6 +4,8 @@ rooms:
   - name: Woonkamer
     icon: mdi:sofa
     light: group.livingroom_lights
+    temperature: sensor.shellyht_ad033a_temperature
+    humidity: sensor.shellyht_ad033a_humidity
     media_player: media_player.the_void
   #     vacuum:
   #       entity: vacuum.rockrobo

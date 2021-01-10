@@ -10,12 +10,12 @@ homeassistant:
   customize_domain: !include customize_domain.yaml
 
 logger:
-  #default: info
+  default: debug
   logs:
+    homeassistant.components.vacuum.xiaomi_miio: debug
     # homeassistant.components.webhook: debug
     # homeassistant.components.config: debug
     # homeassistant.components.config.automation: debug
-    homeassistant.components.vacuum.xiaomi_miio: debug
 
 #cloud:
 config:
