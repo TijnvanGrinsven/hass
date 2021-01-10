@@ -30,6 +30,7 @@ weather: !include devices/weather.yaml
 sensor: !include devices/sensor.yaml
 switch: !include devices/switch.yaml
 camera: !include devices/camera.yaml
+input_boolean: !include devices/input_boolean.yaml
 #vacuum: !include devices/vacuum.yaml
 
 group: !include groups.yaml

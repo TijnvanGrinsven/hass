@@ -31,6 +31,10 @@
     - rainlast24hour
     - rainlasthour
 - platform: dnsip
-  hostname: home-assistant.io
   name: hass
   resolver: 8.8.8.8
+- platform: afvalwijzer
+  provider: mijnafvalwijzer
+  postal_code: !secret postcode
+  street_number: !secret housenumber
+  include_date_today: true

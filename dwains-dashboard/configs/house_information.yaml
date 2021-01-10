@@ -9,6 +9,11 @@ house_information:
     - entity: sensor.storage_washmachine_power
       icon_on: mdi:washing-machine
       icon_off: mdi:washing-machine-off
+  addons:
+    - name: Afvalwijzer
+      icon: mdi:trash-can
+      path: "dwains-dashboard/addons/house_information/afvalwijzer/page.yaml"
+
   #   - entity: binary_sensor.hallway_door_contact
   #     icon_on: mdi:door-open
   #     icon_off: mdi:door-closed

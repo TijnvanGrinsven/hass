@@ -1,4 +1,46 @@
 ---
+#persons
+person.eltinos:
+  friendly_name: Eltinos
+person.yaar:
+  friendly_name: Yaar
+#Binary_sensors - Motion
+binary_sensor.motion_sensor:
+  friendly_name: Storage motion sensor
+  icon-on: mdi:motion-sensor
+  icon-off: mdi:motion-sensor-off
+binary_sensor.bathroom_motion:
+  friendly_name: Badkamer motion sensor
+  icon-on: mdi:motion-sensor
+  icon-off: mdi:motion-sensor-off
+binary_sensor.ground_floor_toilet_motion:
+  friendly_name: Toilet motion sensor
+  icon-on: mdi:motion-sensor
+  icon-off: mdi:motion-sensor-off
+binary_sensor.pocophone_f1_is_charging:
+  hidden: true
+binary_sensor.updater:
+  hidden: true
+
+#Camera
+camera.buienradar_loop:
+  friendly_name: Buienradar loop
+  icon: mdi:camera
+
+#Mediaplayers
+media_player.bedroom_display:
+  friendly_name: Slaapkamer Chromecast
+  icon: mdi:television
+media_player.g_mini:
+  friendly_name: Kantoor speaker
+  icon: mdi:television
+media_player.sonos_living_room:
+  friendly_name: Woonkamer Sonos
+  icon: mdi:television
+media_player.the_void:
+  friendly_name: Woonkamer Chromecast
+  icon: mdi:television
+
 #Temperature sensor
 sensor.bathroom_temperature:
   friendly_name: Badkamer temperatuur
@@ -45,16 +87,13 @@ sensor.storage_washmachine_energy:
 sensor.storage_washmachine_power:
   friendly_name: Wasmachine Huidig(W)
 
-#Motionsensor
-binary_sensor.motion_sensor:
-  friendly_name: Storage motion sensor
-  icon: mdi:motion-sensor
-binary_sensor.bathroom_motion:
-  friendly_name: Badkamer motion sensor
-  icon: mdi:motion-sensor
-binary_sensor.ground_floor_toilet_motion:
-  friendly_name: Toilet motion sensor
-  icon: mdi:motion-sensor
+  #Afvalwijzer
+sensor.afvalwijzer_gft:
+  friendly_name: GFT afval
+sensor.afvalwijzer_restafval:
+  friendly_name: Rest afval
+sensor.afvalwijzer_papier:
+  friendly_name: Papier
 
 #Vacuum
 # vacuum.xiaomi_vacuum_cleaner:
@@ -147,3 +186,7 @@ switch.stove_lights:
 switch.secondfloor_lights:
   friendly_name: 2de verdieping verlichting
   icon: mdi:lightbulb-group
+
+  #hidden
+  sensor.dwains_dashboard_latest_version:
+    hidden: true
