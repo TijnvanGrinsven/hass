@@ -31,8 +31,8 @@ kitchen_lights:
   entities:
     - light.kitchen_ceiling_1
     - light.kitchen_ceiling_2
-    - light.stove_left
-    - light.stove_right
+    - light.kitchen_stove_left
+    - light.kitchen_stove_right
 bedroom_lights:
   name: Hal verlichting
   icon: mdi:lightbulb-on

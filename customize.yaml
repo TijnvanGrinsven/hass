@@ -1,9 +1,51 @@
 ---
-#Sensors
-sensor.motion_sensor:
-  friendly_name: Aquara sensor 1 - Lux
+#Temperature sensor
+sensor.bathroom_temperature:
+  friendly_name: Badkamer temperatuur
+  icon: mdi:thermometer
+sensor.ground_floor_toilet_temperature:
+  friendly_name: Toilet temperatuur
+  icon: mdi:thermometer
+sensor.shellyht_ad033a_temperature:
+  friendly_name: woonkamer temperatuur
+  icon: mdi:thermometer
 
-#Binarysensor
+#Lux sensors
+sensor.motion_sensor:
+  friendly_name: Storage lux sensor
+sensor.ground_floor_toilet_light_level:
+  friendly_name: Toilet lux sensor
+sensor.bathroom_light_level:
+  friendly_name: Badkamer lux sensor
+
+#Humidity sensors
+sensor.shellyht_ad033a_humidity:
+  friendly_name: Woonkamer luchtvochtigheid
+#Battery sensors
+sensor.shellyht_ad033a_battery:
+  friendly_name: Woonkamer Shelly-ht batterij
+sensor.motion_sensor_battery_level:
+  friendly_name: Storage motionsensor batterij
+
+#Energy sensors
+sensor.livingroom_tv_energy:
+  friendly_name: Yari lamp Totaal(KWH)
+sensor.livingroom_tv_power:
+  friendly_name: Yari lamp Huidig(W)
+sensor.livingroom_shelly_plug_energy:
+  friendly_name: Kerstboom Totaal(KWH)
+sensor.livingroom_shelly_plug_power:
+  friendly_name: Kerstboom Huidig(W)
+sensor.office_shellyplug_3dprinter_energy:
+  friendly_name: 3d printer Totaal(KWH)
+sensor.office_shellyplug_3dprinter_power:
+  friendly_name: 3d printer Huidig(W)
+sensor.storage_washmachine_energy:
+  friendly_name: Wasmachine Totaal(KWH)
+sensor.storage_washmachine_power:
+  friendly_name: Wasmachine Huidig(W)
+
+#Motionsensor
 binary_sensor.motion_sensor:
   friendly_name: Storage motion sensor
   icon: mdi:motion-sensor
@@ -43,9 +85,9 @@ light.kitchen_ceiling_1:
 light.kitchen_ceiling_2:
   friendly_name: Keuken plafond 2
   icon: mdi:ceiling-light
-light.kitchen_stove_left:
+light.kitchen_kitchen_stove_left:
   friendly_name: Fornuis links
-light.kitchen_stove_right:
+light.kitchen_kitchen_stove_right:
   friendly_name: Fornuis rechts
 light.livingroom_ceiling:
   friendly_name: Woonkamer plafond
@@ -77,10 +119,7 @@ light.passage_ceiling:
 light.Toilet_ceiling:
   friendly_name: Toilet plafond
   icon: mdi:ceiling-light
-#Switch
-switch.livingroom_shelly_plug:
-  friendly_name: Tv lamp rechts
-  icon: mdi:floor-lamp
+
 ##Downstairs
 switch.downstairs_lights:
   friendly_name: Beganegrond verlichting

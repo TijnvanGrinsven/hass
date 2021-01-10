@@ -10,7 +10,7 @@ global:
   show_covers: closed
 
   weather: weather.eindhoven # Configure a weather entity see HA docs for more info.
-  outside_temperature: sensor.eindhoven_feel_temperature_3 # Configure a sensor here!
+  outside_temperature: sensor.eindhoven_temperature_2 # Configure a sensor here!
   outside_humidity: sensor.eindhoven_humidity_2 # Configure a sensor here!
   # alarm: alarm_control_panel.alarm_system #Alarm panel entity.
   inside_temperature: sensor.ground_floor_toilet_temperature #Can be 'climate.' or an 'sensor.' entity.

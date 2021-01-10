@@ -10,12 +10,12 @@ homeassistant:
   customize_domain: !include customize_domain.yaml
 
 logger:
-  default: debug
-  logs:
-    homeassistant.components.vacuum.xiaomi_miio: debug
-    # homeassistant.components.webhook: debug
-    # homeassistant.components.config: debug
-    # homeassistant.components.config.automation: debug
+  default: info
+  #logs:
+  # homeassistant.components.vacuum.xiaomi_miio: debug
+  # homeassistant.components.webhook: debug
+  # homeassistant.components.config: debug
+  # homeassistant.components.config.automation: debug
 
 #cloud:
 config:
@@ -30,7 +30,7 @@ weather: !include devices/weather.yaml
 sensor: !include devices/sensor.yaml
 switch: !include devices/switch.yaml
 camera: !include devices/camera.yaml
-vacuum: !include devices/vacuum.yaml
+#vacuum: !include devices/vacuum.yaml
 
 group: !include groups.yaml
 automation: !include_dir_merge_list automation/
