@@ -16,12 +16,13 @@ rooms:
   - name: Kantoor
     icon: mdi:desk-lamp
     light: group.office_lights
-    temperature: sensor.ground_floor_toilet_temperature
+    temperature: sensor.shellydw2_483fda82540e_temperature
     media_player: media_player.g_mini
   - name: Hal
     icon: mdi:key
     light: group.hall_lights
-    temperature: sensor.ground_floor_toilet_temperature
+    temperature: sensor.shellydw2_40f5202e38f5_temperature
+    door: binary_sensor.shellydw2_40f5202e38f5_door
   - name: Toilet
     icon: mdi:toilet
     light: light.toilet_ceiling
@@ -31,7 +32,8 @@ rooms:
     icon: mdi:washing-machine
     light: group.storage_lights
     motion: binary_sensor.motion_sensor
-    temperature: sensor.ground_floor_toilet_temperature
+    door: binary_sensor.shellydw2_483fda82540e_door
+    temperature: sensor.shellydw2_483fda82540e_temperature
   - name: Overloop
     icon: mdi:lightbulb-multiple
     light: group.passage_lights

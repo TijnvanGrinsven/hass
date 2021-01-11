@@ -25,12 +25,19 @@ logbook:
 map:
 mobile_app:
 
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_key
+    allowed_chat_ids:
+      - !secret telegram_bot_main_chat_id
+
 light: !include devices/light.yaml
 weather: !include devices/weather.yaml
 sensor: !include devices/sensor.yaml
 switch: !include devices/switch.yaml
 camera: !include devices/camera.yaml
 input_boolean: !include devices/input_boolean.yaml
+notify: !include devices/notify.yaml
 #vacuum: !include devices/vacuum.yaml
 
 group: !include groups.yaml

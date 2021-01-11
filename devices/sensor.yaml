@@ -32,7 +32,6 @@
     - rainlasthour
 - platform: dnsip
   name: hass
-  resolver: !secret dns
 - platform: afvalwijzer
   provider: mijnafvalwijzer
   postal_code: !secret postalcode

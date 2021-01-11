@@ -1,0 +1,18 @@
+- alias: Back door motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.shellydw2_40f5202e38f5_door
+      to: "on"
+  action:
+    - service: notify.telegram_notify
+      data:
+        message: "Achter deur is geopend!"
+- alias: Storage motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.shellydw2_40f5202e38f5_door
+      to: "on"
+  action:
+    - service: notify.telegram_notify
+      data:
+        message: "Beweging in de berging"

@@ -4,7 +4,8 @@ person.eltinos:
   friendly_name: Eltinos
 person.yaar:
   friendly_name: Yaar
-#Binary_sensors - Motion
+
+#Motion binary_sensor
 binary_sensor.motion_sensor:
   friendly_name: Storage motion sensor
   icon-on: mdi:motion-sensor
@@ -17,6 +18,16 @@ binary_sensor.ground_floor_toilet_motion:
   friendly_name: Toilet motion sensor
   icon-on: mdi:motion-sensor
   icon-off: mdi:motion-sensor-off
+
+#Door/window sensor binary_sensor
+binary_sensor.shellydw2_40f5202e38f5_door:
+  friendly_name: Voordeur
+  icon-on: mdi:door
+binary_sensor.shellydw2_483fda82540e_door:
+  friendly_name: Achterdeur
+  icon: mdi:thermometer
+
+#Misc binary_sensor
 binary_sensor.pocophone_f1_is_charging:
   hidden: true
 binary_sensor.updater:
@@ -51,6 +62,14 @@ sensor.ground_floor_toilet_temperature:
 sensor.shellyht_ad033a_temperature:
   friendly_name: woonkamer temperatuur
   icon: mdi:thermometer
+sensor.shellydw2_40f5202e38f5_temperature:
+  friendly_name: Hal temperatuur
+  icon: mdi:thermometer
+sensor.shellydw2_483fda82540e_temperature:
+  friendly_name: Storage temperatuur
+  icon: mdi:thermometer
+
+#Battery sensor
 
 #Lux sensors
 sensor.motion_sensor:
@@ -59,15 +78,29 @@ sensor.ground_floor_toilet_light_level:
   friendly_name: Toilet lux sensor
 sensor.bathroom_light_level:
   friendly_name: Badkamer lux sensor
+sensor.shellydw2_40f5202e38f5_luminosity:
+  friendly_name: Voordeur lux sensor
+sensor.shellydw2_483fda82540e_luminosity:
+  friendly_name: Achterdeur lux sensor
 
 #Humidity sensors
 sensor.shellyht_ad033a_humidity:
   friendly_name: Woonkamer luchtvochtigheid
+  icon: mdi:battery
+
 #Battery sensors
 sensor.shellyht_ad033a_battery:
   friendly_name: Woonkamer Shelly-ht batterij
+  icon: mdi:battery
 sensor.motion_sensor_battery_level:
   friendly_name: Storage motionsensor batterij
+  icon: mdi:battery
+sensor.shellydw2_483fda82540e_battery:
+  friendly_name: Achterdeur sensor batterij
+  icon: mdi:battery
+sensor.shellydw2_40f5202e38f5_battery:
+  friendly_name: Voordeur sensor batterij
+  icon: mdi:battery
 
 #Energy sensors
 sensor.livingroom_tv_energy:
