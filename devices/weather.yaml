@@ -2,6 +2,6 @@
 - platform: buienradar
   name: "Eindhoven"
   # Force 'Meetstation Eindhoven' to be used:
-  latitude: 51.45
-  longitude: 5.38
+  latitude: !secret latitude
+  longitude: !secret longitude
   forecast: true

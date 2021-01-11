@@ -13,6 +13,7 @@ house_information:
     - name: Afvalwijzer
       icon: mdi:trash-can
       path: "dwains-dashboard/addons/house_information/afvalwijzer/page.yaml"
+      button: "dwains-dashboard/addons/house_information/afvalwijzer/button.yaml"
 
   #   - entity: binary_sensor.hallway_door_contact
   #     icon_on: mdi:door-open

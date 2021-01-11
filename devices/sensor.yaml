@@ -2,8 +2,8 @@
 - platform: buienradar
   name: "Eindhoven"
   # Force 'Meetstation Eindhoven' to be used:
-  latitude: 51.45
-  longitude: 5.38
+  latitude: !secret latitude
+  longitude: !secret longitude
   monitored_conditions:
     - stationname
     - barometerfc
@@ -32,9 +32,9 @@
     - rainlasthour
 - platform: dnsip
   name: hass
-  resolver: 8.8.8.8
+  resolver: !secret dns
 - platform: afvalwijzer
   provider: mijnafvalwijzer
-  postal_code: !secret postcode
+  postal_code: !secret postalcode
   street_number: !secret housenumber
   include_date_today: true

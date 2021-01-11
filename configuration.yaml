@@ -1,9 +1,9 @@
 ---
 homeassistant:
   name: Eindhoven
-  latitude: 51.421360
-  longitude: 5.501370
-  elevation: 10
+  latitude: !secret house_latitude
+  longitude: !secret house_longitude
+  elevation: !secret house_elevation
   unit_system: metric
   time_zone: Europe/Amsterdam
   customize: !include customize.yaml
