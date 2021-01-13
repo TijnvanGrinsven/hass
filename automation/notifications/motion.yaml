@@ -1,0 +1,10 @@
+---
+- alias: Storage motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor
+      to: "on"
+  action:
+    - service: notify.telegram_notify
+      data:
+        message: "Beweging in de berging"
