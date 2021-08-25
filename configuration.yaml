@@ -39,6 +39,7 @@ camera: !include devices/camera.yaml
 input_boolean: !include devices/input_boolean.yaml
 notify: !include devices/notify.yaml
 #vacuum: !include devices/vacuum.yaml
+system_health:
 
 group: !include groups.yaml
 automation: !include_dir_merge_list automation/

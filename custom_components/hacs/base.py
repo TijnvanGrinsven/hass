@@ -1,17 +1,22 @@
 """Base HACS class."""
 import logging
-from typing import List, Optional
-import attr
+import pathlib
+from typing import TYPE_CHECKING, List, Optional
 
-from aiogithubapi.github import AIOGitHubAPI
+import attr
+from aiogithubapi import GitHub, GitHubAPI
 from aiogithubapi.objects.repository import AIOGitHubAPIRepository
 from homeassistant.core import HomeAssistant
 
-from .enums import HacsStage
-from .helpers.functions.logger import getLogger
+from .enums import HacsDisabledReason, HacsStage
+from .hacsbase.configuration import Configuration
 from .models.core import HacsCore
 from .models.frontend import HacsFrontend
 from .models.system import HacsSystem
+from .utils.logger import getLogger
+
+if TYPE_CHECKING:
+    from .helpers.classes.repository import HacsRepository
 
 
 class HacsCommon:
@@ -20,6 +25,8 @@ class HacsCommon:
     categories: List = []
     default: List = []
     installed: List = []
+    renamed_repositories = {}
+    archived_repositories = []
     skip: List = []
 
 
@@ -38,8 +45,10 @@ class HacsBaseAttributes:
     """Base HACS class."""
 
     _default: Optional[AIOGitHubAPIRepository]
-    _github: Optional[AIOGitHubAPI]
+    _github: Optional[GitHub]
+    _githubapi: Optional[GitHubAPI]
     _hass: Optional[HomeAssistant]
+    _configuration: Optional[Configuration]
     _repository: Optional[AIOGitHubAPIRepository]
     _stage: HacsStage = HacsStage.SETUP
     _common: Optional[HacsCommon]
@@ -50,7 +59,7 @@ class HacsBaseAttributes:
     frontend: HacsFrontend = attr.ib(HacsFrontend)
     log: logging.Logger = getLogger()
     system: HacsSystem = attr.ib(HacsSystem)
-    repositories: List = []
+    repositories: List["HacsRepository"] = []
 
 
 @attr.s
@@ -68,14 +77,24 @@ class HacsBase(HacsBaseAttributes):
         self._stage = value
 
     @property
-    def github(self) -> Optional[AIOGitHubAPI]:
+    def github(self) -> Optional[GitHub]:
         """Returns a AIOGitHubAPI object."""
         return self._github
 
     @github.setter
-    def github(self, value: AIOGitHubAPI) -> None:
+    def github(self, value: GitHub) -> None:
         """Set the value for the github property."""
         self._github = value
+
+    @property
+    def githubapi(self) -> Optional[GitHubAPI]:
+        """Returns a GitHubAPI object."""
+        return self._github_api
+
+    @githubapi.setter
+    def githubapi(self, value: GitHubAPI) -> None:
+        """Set the value for the githubapi property."""
+        self._github_api = value
 
     @property
     def repository(self) -> Optional[AIOGitHubAPIRepository]:
@@ -106,3 +125,31 @@ class HacsBase(HacsBaseAttributes):
     def hass(self, value: HomeAssistant) -> None:
         """Set the value for the default property."""
         self._hass = value
+
+    @property
+    def configuration(self) -> Optional[Configuration]:
+        """Returns a Configuration object."""
+        return self._configuration
+
+    @configuration.setter
+    def configuration(self, value: Configuration) -> None:
+        """Set the value for the default property."""
+        self._configuration = value
+
+    @property
+    def integration_dir(self) -> pathlib.Path:
+        """Return the HACS integration dir."""
+        return pathlib.Path(__file__).parent
+
+    def disable(self, reason: HacsDisabledReason) -> None:
+        """Disable HACS."""
+        self.system.disabled = True
+        self.system.disabled_reason = reason
+        if reason != HacsDisabledReason.REMOVED:
+            self.log.error("HACS is disabled - %s", reason)
+
+    def enable(self) -> None:
+        """Enable HACS."""
+        self.system.disabled = False
+        self.system.disabled_reason = None
+        self.log.info("HACS is enabled")

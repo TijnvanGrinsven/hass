@@ -1,8 +1,9 @@
 """Sensor platform for HACS."""
-from homeassistant.helpers.entity import Entity
-from custom_components.hacs.const import DOMAIN, NAME_SHORT, VERSION
-from custom_components.hacs.share import get_hacs
 from homeassistant.core import callback
+from homeassistant.helpers.entity import Entity
+
+from custom_components.hacs.const import DOMAIN, INTEGRATION_VERSION, NAME_SHORT
+from custom_components.hacs.mixin import HacsMixin
 
 
 async def async_setup_platform(
@@ -17,7 +18,7 @@ async def async_setup_entry(_hass, _config_entry, async_add_devices):
     async_add_devices([HACSSensor()])
 
 
-class HACSDevice(Entity):
+class HACSDevice(HacsMixin, Entity):
     """HACS Device class."""
 
     @property
@@ -28,7 +29,7 @@ class HACSDevice(Entity):
             "name": NAME_SHORT,
             "manufacturer": "hacs.xyz",
             "model": "",
-            "sw_version": VERSION,
+            "sw_version": INTEGRATION_VERSION,
             "entry_type": "service",
         }
 
@@ -59,16 +60,15 @@ class HACSSensor(HACSDevice):
     @callback
     def _update(self):
         """Update the sensor."""
-        hacs = get_hacs()
-        if hacs.status.background_task:
+        if self.hacs.status.background_task:
             return
 
         self.repositories = []
 
-        for repository in hacs.repositories:
+        for repository in self.hacs.repositories:
             if (
                 repository.pending_upgrade
-                and repository.data.category in hacs.common.categories
+                and repository.data.category in self.hacs.common.categories
             ):
                 self.repositories.append(repository)
         self._state = len(self.repositories)
