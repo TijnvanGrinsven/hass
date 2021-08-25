@@ -40,7 +40,17 @@ input_boolean: !include devices/input_boolean.yaml
 notify: !include devices/notify.yaml
 #vacuum: !include devices/vacuum.yaml
 system_health:
-
+lovelace:
+  mode: yaml
+  resources: !include www/resources.yaml
+  dashboards:
+    lovelace-system:
+      mode: yaml
+      filename: ui-system.yaml
+      title: "System"
+      icon: mdi:view-dashboard
+      show_in_sidebar: true
+      require_admin: false
 group: !include groups.yaml
 automation: !include_dir_merge_list automation/
 script: !include scripts.yaml
