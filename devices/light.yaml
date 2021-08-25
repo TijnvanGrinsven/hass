@@ -1,7 +1,7 @@
 ---
-- platform: switch
-  name: livingroom_grondlamp_tv
-  entity_id: switch.livingroom_shelly_plug
+# - platform: switch
+#   name: livingroom_grondlamp_tv
+#   entity_id: switch.livingroom_shelly_plug
 - platform: switch
   name: livingroom_grondlamp_tv_2
   entity_id: switch.livingroom_tv

@@ -108,9 +108,9 @@ sensor.livingroom_tv_energy:
 sensor.livingroom_tv_power:
   friendly_name: Yari lamp Huidig(W)
 sensor.livingroom_shelly_plug_energy:
-  friendly_name: Kerstboom Totaal(KWH)
+  friendly_name: Nas449 Totaal(KWH)
 sensor.livingroom_shelly_plug_power:
-  friendly_name: Kerstboom Huidig(W)
+  friendly_name: Nas449 Huidig(W)
 sensor.office_shellyplug_3dprinter_energy:
   friendly_name: 3d printer Totaal(KWH)
 sensor.office_shellyplug_3dprinter_power:
@@ -173,9 +173,9 @@ light.livingroom_sauroman:
 light.livingroom_tvspot:
   friendly_name: Woonkamer TVspot
   icon: mdi:television-ambient-light
-light.livingroom_grondlamp_tv:
-  friendly_name: Woonkamer kerstboom
-  icon: mdi:pine-tree
+# light.livingroom_grondlamp_tv:
+#   friendly_name: Office Nas449
+#   icon: mdi:pine-tree
 light.livingroom_grondlamp_tv_2:
   friendly_name: Woonkamer Yari lamp
   icon: mdi:floor-lamp

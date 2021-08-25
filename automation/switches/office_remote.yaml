@@ -28,6 +28,7 @@
         brightness: >
           {% set bri = state_attr('light.office_ceiling_1', 'brightness') | int %}
           {{ [bri+30, 249] | min }}
+
 - alias: "Decrease brightness of lamp from dimmer"
   initial_state: on
   trigger:
