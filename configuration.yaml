@@ -24,6 +24,7 @@ history:
 logbook:
 map:
 mobile_app:
+energy:
 
 telegram_bot:
   - platform: polling
