@@ -7,7 +7,7 @@ automations.yaml
 blueprints/
 image/
 scenes.yaml
-*.log
+*.log*
 *.db
 .HA_VERSION
 home-assistant_v2.db-*
