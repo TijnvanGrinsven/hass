@@ -1,0 +1,7 @@
+---
+- platform: buienradar
+  name: "Eindhoven"
+  # Force 'Meetstation Eindhoven' to be used:
+  latitude: !secret latitude
+  longitude: !secret longitude
+  forecast: true

@@ -1,0 +1,16 @@
+title: Casa Eltinos
+views:
+  - path: default_view
+    title: Home
+    badges:
+      - entity: person.eltinos
+      - entity: person.yaar
+    cards:
+      - type: picture-glance
+        title: Livingroom
+        image: /local/img/woonkamer.jpg
+        entities:
+          - entity: switch.livingroom_lights
+        hold_action:
+          action: toggle
+        entity: switch.livingroom_lights

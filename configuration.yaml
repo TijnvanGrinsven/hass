@@ -1,39 +1,57 @@
 ---
 homeassistant:
   name: Eindhoven
-  latitude: 51.479751
-  longitude: 5.503628
-  elevation: 0
+  latitude: !secret house_latitude
+  longitude: !secret house_longitude
+  elevation: !secret house_elevation
   unit_system: metric
   time_zone: Europe/Amsterdam
   customize: !include customize.yaml
   customize_domain: !include customize_domain.yaml
 
 logger:
-  #default: info
-  logs:
-    homeassistant.components.webhook: debug
-    homeassistant.components.config: debug
-    homeassistant.components.config.automation: debug
-    homeassistant.components.vacuum.xiaomi_miio: debug
+  default: info
+  #logs:
+  # homeassistant.components.vacuum.xiaomi_miio: debug
+  # homeassistant.components.webhook: debug
+  # homeassistant.components.config: debug
+  # homeassistant.components.config.automation: debug
 
 #cloud:
 config:
 conversation:
 history:
-
 logbook:
 map:
+mobile_app:
+energy:
 
-#light: !include devices/light.yaml
-#sensor: !include devices/sensor.yaml
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_key
+    allowed_chat_ids:
+      - !secret telegram_bot_main_chat_id
+
+light: !include devices/light.yaml
+weather: !include devices/weather.yaml
+sensor: !include devices/sensor.yaml
 switch: !include devices/switch.yaml
-
-vacuum:
-  - platform: xiaomi_miio
-    host: 192.168.2.192
-    token: !secret vacuum_token
-
+camera: !include devices/camera.yaml
+input_boolean: !include devices/input_boolean.yaml
+notify: !include devices/notify.yaml
+#vacuum: !include devices/vacuum.yaml
+system_health:
+lovelace:
+  mode: yaml
+  resources: !include www/resources.yaml
+  dashboards:
+    lovelace-system:
+      mode: yaml
+      filename: ui-system.yaml
+      title: "System"
+      icon: mdi:view-dashboard
+      show_in_sidebar: true
+      require_admin: false
 group: !include groups.yaml
 automation: !include_dir_merge_list automation/
 script: !include scripts.yaml

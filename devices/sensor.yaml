@@ -1,0 +1,39 @@
+---
+- platform: buienradar
+  name: "Eindhoven"
+  # Force 'Meetstation Eindhoven' to be used:
+  latitude: !secret latitude
+  longitude: !secret longitude
+  monitored_conditions:
+    - stationname
+    - barometerfc
+    - barometerfcname
+    - conditioncode
+    - condition
+    - conditiondetailed
+    - conditionexact
+    - symbol
+    - feeltemperature
+    - humidity
+    - temperature
+    - groundtemperature
+    - windspeed
+    - windforce
+    - winddirection
+    - windazimuth
+    - pressure
+    - visibility
+    - windgust
+    - precipitation
+    - irradiance
+    - precipitation_forecast_average
+    - precipitation_forecast_total
+    - rainlast24hour
+    - rainlasthour
+- platform: dnsip
+  name: hass
+- platform: afvalwijzer
+  provider: mijnafvalwijzer
+  postal_code: !secret postalcode
+  street_number: !secret housenumber
+  include_date_today: true

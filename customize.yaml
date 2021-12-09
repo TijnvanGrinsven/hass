@@ -1,23 +1,197 @@
 ---
-#Sensors
-sensor.motion_sensor:
-  friendly_name: Aquara sensor 1 - Lux
+#persons
+person.eltinos:
+  friendly_name: Eltinos
+person.yaar:
+  friendly_name: Yaar
 
-#Binarysensor
+#Motion binary_sensor
 binary_sensor.motion_sensor:
-  friendly_name: Aquara sensor 1 - Motion
-  icon: mdi:motion-sensor
+  friendly_name: Storage motion sensor
+  icon-on: mdi:motion-sensor
+  icon-off: mdi:motion-sensor-off
+binary_sensor.bathroom_motion:
+  friendly_name: Badkamer motion sensor
+  icon-on: mdi:motion-sensor
+  icon-off: mdi:motion-sensor-off
+binary_sensor.ground_floor_toilet_motion:
+  friendly_name: Toilet motion sensor
+  icon-on: mdi:motion-sensor
+  icon-off: mdi:motion-sensor-off
+
+#Door/window sensor binary_sensor
+binary_sensor.shellydw2_40f5202e38f5_door:
+  friendly_name: Voordeur
+  icon-on: mdi:door
+binary_sensor.shellydw2_483fda82540e_door:
+  friendly_name: Achterdeur
+  icon: mdi:thermometer
+
+#Misc binary_sensor
+binary_sensor.pocophone_f1_is_charging:
+  hidden: true
+binary_sensor.updater:
+  hidden: true
+
+#Camera
+camera.buienradar_loop:
+  friendly_name: Buienradar loop
+  icon: mdi:camera
+
+#Mediaplayers
+media_player.bedroom_display:
+  friendly_name: Slaapkamer Chromecast
+  icon: mdi:television
+media_player.g_mini:
+  friendly_name: Kantoor speaker
+  icon: mdi:television
+media_player.sonos_living_room:
+  friendly_name: Woonkamer Sonos
+  icon: mdi:television
+media_player.the_void:
+  friendly_name: Woonkamer Chromecast
+  icon: mdi:television
+
+#Temperature sensor
+sensor.bathroom_temperature:
+  friendly_name: Badkamer temperatuur
+  icon: mdi:thermometer
+sensor.ground_floor_toilet_temperature:
+  friendly_name: Toilet temperatuur
+  icon: mdi:thermometer
+sensor.shellyht_ad033a_temperature:
+  friendly_name: woonkamer temperatuur
+  icon: mdi:thermometer
+sensor.shellydw2_40f5202e38f5_temperature:
+  friendly_name: Hal temperatuur
+  icon: mdi:thermometer
+sensor.shellydw2_483fda82540e_temperature:
+  friendly_name: Storage temperatuur
+  icon: mdi:thermometer
+
+#Battery sensor
+
+#Lux sensors
+sensor.motion_sensor:
+  friendly_name: Storage lux sensor
+sensor.ground_floor_toilet_light_level:
+  friendly_name: Toilet lux sensor
+sensor.bathroom_light_level:
+  friendly_name: Badkamer lux sensor
+sensor.shellydw2_40f5202e38f5_luminosity:
+  friendly_name: Voordeur lux sensor
+sensor.shellydw2_483fda82540e_luminosity:
+  friendly_name: Achterdeur lux sensor
+
+#Humidity sensors
+sensor.shellyht_ad033a_humidity:
+  friendly_name: Woonkamer luchtvochtigheid
+  icon: mdi:battery
+
+#Battery sensors
+sensor.shellyht_ad033a_battery:
+  friendly_name: Woonkamer Shelly-ht batterij
+  icon: mdi:battery
+sensor.motion_sensor_battery_level:
+  friendly_name: Storage motionsensor batterij
+  icon: mdi:battery
+sensor.shellydw2_483fda82540e_battery:
+  friendly_name: Achterdeur sensor batterij
+  icon: mdi:battery
+sensor.shellydw2_40f5202e38f5_battery:
+  friendly_name: Voordeur sensor batterij
+  icon: mdi:battery
+
+#Energy sensors
+sensor.livingroom_tv_energy:
+  friendly_name: Yari lamp Totaal(KWH)
+sensor.livingroom_tv_power:
+  friendly_name: Yari lamp Huidig(W)
+sensor.livingroom_shelly_plug_energy:
+  friendly_name: Nas449 Totaal(KWH)
+sensor.livingroom_shelly_plug_power:
+  friendly_name: Nas449 Huidig(W)
+sensor.office_shellyplug_3dprinter_energy:
+  friendly_name: 3d printer Totaal(KWH)
+sensor.office_shellyplug_3dprinter_power:
+  friendly_name: 3d printer Huidig(W)
+sensor.storage_washmachine_energy:
+  friendly_name: Wasmachine Totaal(KWH)
+sensor.storage_washmachine_power:
+  friendly_name: Wasmachine Huidig(W)
+
+  #Afvalwijzer
+sensor.afvalwijzer_gft:
+  friendly_name: GFT afval
+sensor.afvalwijzer_restafval:
+  friendly_name: Rest afval
+sensor.afvalwijzer_papier:
+  friendly_name: Papier
 
 #Vacuum
-vacuum.xiaomi_vacuum_cleaner:
-  friendly_name: Zwabbertje
-  icon: mdi:robot-vacuum
+# vacuum.xiaomi_vacuum_cleaner:
+#   friendly_name: Zwabbertje
+#   icon: mdi:robot-vacuum
 
 #Lights
 light.storage_ceiling:
-  friendly_name: Washok
+  friendly_name: Storage plafond
+  icon: mdi:ceiling-light
+light.bathroom_ceiling:
+  friendly_name: Badkamer plafond
+  icon: mdi:ceiling-light
+light.bathroom_sink:
+  friendly_name: Badkamer wasbak
+light.bedroom_ceiling:
+  friendly_name: Slaapkamer plafond
+  icon: mdi:ceiling-light
+light.hall_ceiling_1:
+  friendly_name: Hall plafond 1
+  icon: mdi:ceiling-light
+light.hall_ceiling_2:
+  friendly_name: Hall plafond 2
+  icon: mdi:ceiling-light
+light.kitchen_ceiling_1:
+  friendly_name: Keuken plafond 1
+  icon: mdi:ceiling-light
+light.kitchen_ceiling_2:
+  friendly_name: Keuken plafond 2
+  icon: mdi:ceiling-light
+light.kitchen_kitchen_stove_left:
+  friendly_name: Fornuis links
+light.kitchen_kitchen_stove_right:
+  friendly_name: Fornuis rechts
+light.livingroom_ceiling:
+  friendly_name: Woonkamer plafond
+  icon: mdi:ceiling-light
+light.livingroom_diner:
+  friendly_name: Woonkamer trap
+  icon: mdi:ceiling-light
+light.livingroom_sauroman:
+  friendly_name: Woonkamer Sauroman
+  icon: mdi:lava-lamp
+light.livingroom_tvspot:
+  friendly_name: Woonkamer TVspot
+  icon: mdi:television-ambient-light
+# light.livingroom_grondlamp_tv:
+#   friendly_name: Office Nas449
+#   icon: mdi:pine-tree
+light.livingroom_grondlamp_tv_2:
+  friendly_name: Woonkamer Yari lamp
+  icon: mdi:floor-lamp
+light.office_ceiling_1:
+  friendly_name: Kantoor plafond 1
+  icon: mdi:ceiling-light
+light.office_ceiling_2:
+  friendly_name: Kantoor plafond 2
+  icon: mdi:ceiling-light
+light.passage_ceiling:
+  friendly_name: Overloop plafond
+  icon: mdi:ceiling-light
+light.Toilet_ceiling:
+  friendly_name: Toilet plafond
+  icon: mdi:ceiling-light
 
-#Switches-light groups
 ##Downstairs
 switch.downstairs_lights:
   friendly_name: Beganegrond verlichting
@@ -45,3 +219,7 @@ switch.stove_lights:
 switch.secondfloor_lights:
   friendly_name: 2de verdieping verlichting
   icon: mdi:lightbulb-group
+
+  #hidden
+  sensor.dwains_dashboard_latest_version:
+    hidden: true
