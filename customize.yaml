@@ -157,9 +157,9 @@ light.kitchen_ceiling_1:
 light.kitchen_ceiling_2:
   friendly_name: Keuken plafond 2
   icon: mdi:ceiling-light
-light.kitchen_kitchen_stove_left:
+light.kitchen_stove_left:
   friendly_name: Fornuis links
-light.kitchen_kitchen_stove_right:
+light.kitchen_stove_right:
   friendly_name: Fornuis rechts
 light.livingroom_ceiling:
   friendly_name: Woonkamer plafond
@@ -170,15 +170,6 @@ light.livingroom_diner:
 light.livingroom_sauroman:
   friendly_name: Woonkamer Sauroman
   icon: mdi:lava-lamp
-light.livingroom_tvspot:
-  friendly_name: Woonkamer TVspot
-  icon: mdi:television-ambient-light
-# light.livingroom_grondlamp_tv:
-#   friendly_name: Office Nas449
-#   icon: mdi:pine-tree
-light.livingroom_grondlamp_tv_2:
-  friendly_name: Woonkamer Yari lamp
-  icon: mdi:floor-lamp
 light.office_ceiling_1:
   friendly_name: Kantoor plafond 1
   icon: mdi:ceiling-light
@@ -188,9 +179,21 @@ light.office_ceiling_2:
 light.passage_ceiling:
   friendly_name: Overloop plafond
   icon: mdi:ceiling-light
-light.Toilet_ceiling:
+light.toilet_ceiling:
   friendly_name: Toilet plafond
   icon: mdi:ceiling-light
+light.wardrobe_ceiling:
+  friendly_name: Kledingkast plafond
+  icon: mdi:ceiling-light
+#light.livingroom_tvspot:
+#  friendly_name: Woonkamer TVspot
+#  icon: mdi:television-ambient-light
+# light.livingroom_grondlamp_tv:
+#   friendly_name: Office Nas449
+#   icon: mdi:pine-tree
+#light.livingroom_grondlamp_tv_2:
+#  friendly_name: Woonkamer Yari lamp
+#  icon: mdi:floor-lamp
 
 ##Downstairs
 switch.downstairs_lights:

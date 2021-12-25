@@ -1,7 +1,7 @@
 - alias: Turn on storage when there is movement
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor
+    entity_id: binary_sensor.storage_sensor
     to: "on"
   action:
     service: light.turn_on
@@ -10,7 +10,7 @@
 - alias: Turn off storage light 5 minutes after last movement
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor
+    entity_id: binary_sensor.storage_sensor
     to: "off"
     for:
       minutes: 5
@@ -32,7 +32,7 @@
 - alias: Turn off bathroom light 10 minutes after last movement
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor
+    entity_id: binary_sensor.bathroom_motion
     to: "off"
     for:
       minutes: 10
@@ -41,3 +41,71 @@
     entity_id:
       - light.bathroom_sink
       - light.bathroom_ceiling
+
+- alias: Turn on hallway when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.hall_sensor
+    to: "on"
+  action:
+    service: light.turn_on
+    entity_id:
+      - light.hall_ceiling_1
+      - light.hall_ceiling_2
+
+- alias: Turn off hallway light 3 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.hall_sensor
+    to: "off"
+    for:
+      minutes: 3
+  action:
+    service: light.turn_off
+    entity_id:
+      - light.hall_ceiling_1
+      - light.hall_ceiling_2
+
+- alias: Turn on wardrobe when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.wardrobe_sensor
+    to: "on"
+  action:
+    service: light.turn_on
+    entity_id:
+      - light.wardrobe_ceiling
+
+- alias: Turn off wardrobe light 10 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.wardrobe_sensor
+    to: "off"
+    for:
+      minutes: 10
+  action:
+    service: light.turn_off
+    entity_id:
+      - light.wardrobe_ceiling
+
+- alias: Turn on Passage when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.passage_sensor
+    to: "on"
+  action:
+    service: light.turn_on
+    entity_id:
+      - light.passage_ceiling
+
+- alias: Turn off Passage light 5 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.passage_sensor
+    to: "off"
+    for:
+      minutes: 5
+  action:
+    service: light.turn_off
+    entity_id:
+      - light.passage_ceiling

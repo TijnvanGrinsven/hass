@@ -11,22 +11,22 @@ hall_lights:
     - light.hall_ceiling_1
     - light.hall_ceiling_2
 storage_lights:
-  name: Hal verlichting
+  name: Washok verlichting
   icon: mdi:lightbulb-on
   entities:
     - light.storage_ceiling
 livingroom_lights:
-  name: Hal verlichting
+  name: Woonkamer verlichting
   icon: mdi:lightbulb-on
   entities:
     - light.livingroom_ceiling
     - light.livingroom_diner
     - light.livingroom_sauroman
-    - light.livingroom_tvspot
-    - light.livingroom_grondlamp_tv
-    - light.livingroom_grondlamp_tv_2
+#    - light.livingroom_tvspot
+#    - light.livingroom_grondlamp_tv
+#    - light.livingroom_grondlamp_tv_2
 kitchen_lights:
-  name: Hal verlichting
+  name: Keuken verlichting
   icon: mdi:lightbulb-on
   entities:
     - light.kitchen_ceiling_1
@@ -34,7 +34,7 @@ kitchen_lights:
     - light.kitchen_stove_left
     - light.kitchen_stove_right
 bedroom_lights:
-  name: Hal verlichting
+  name: Slaapkamer verlichting
   icon: mdi:lightbulb-on
   entities:
     - light.bedroom_ceiling
