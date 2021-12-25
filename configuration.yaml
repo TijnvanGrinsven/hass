@@ -32,12 +32,12 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_bot_main_chat_id
 
-light: !include devices/light.yaml
-weather: !include devices/weather.yaml
-sensor: !include devices/sensor.yaml
-switch: !include devices/switch.yaml
-camera: !include devices/camera.yaml
-input_boolean: !include devices/input_boolean.yaml
+#light: !include devices/light.yaml
+#weather: !include devices/weather.yaml
+#sensor: !include devices/sensor.yaml
+#switch: !include devices/switch.yaml
+#camera: !include devices/camera.yaml
+#input_boolean: !include devices/input_boolean.yaml
 notify: !include devices/notify.yaml
 #vacuum: !include devices/vacuum.yaml
 system_health:
@@ -52,7 +52,7 @@ lovelace:
       icon: mdi:view-dashboard
       show_in_sidebar: true
       require_admin: false
-group: !include groups.yaml
+#group: !include groups.yaml
 automation: !include_dir_merge_list automation/
 script: !include scripts.yaml
 scene: !include scenes.yaml
